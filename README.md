@@ -1,15 +1,7 @@
-# Basic Sample Hardhat Project
+# NFTFetcher Contracts
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This is a hardhat project for writing and compiling. solidity contracts for the a [Unity NFT Market Game](https://github.com/Rafael450/NFTMarketGame). Its purpose is to fetch the NFT's a specific address owns in the rinkeby testnet.
 
-Try running some of the following tasks:
+## Author
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+- [@Rafael450](https://github.com/Rafael450)
