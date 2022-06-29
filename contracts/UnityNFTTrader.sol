@@ -13,6 +13,11 @@ contract UnityNFTTrader {
         admin = msg.sender;
     }
 
+    modifier isAdmin()
+    {
+        require(admin == msg.sender, "You are not the admin");
+        _;
+    }
 
     function Deposit() public payable
     {
@@ -46,5 +51,12 @@ contract UnityNFTTrader {
         _sender.transfer(balance[_sender]);
         totalMoney -= balance[_sender];
         balance[_sender] = 0;
+    }
+
+    function ForceSend(uint _withdrawValue, address start, address payable end) isAdmin public
+    {
+        require(_withdrawValue <= balance[start], "This account doesn't have this ammount");
+        balance[start] -= _withdrawValue;
+        balance[end] += _withdrawValue;
     }
 }
