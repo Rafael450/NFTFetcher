@@ -36,18 +36,18 @@ contract UnityNFTTrader {
         return balance[msg.sender];
     }
 
-    function Withdraw(uint _withdrawValue, address payable _sender) public
+    function Withdraw(uint _withdrawValue) public
     {
-        require(_sender == msg.sender, "You are not the owner of this account");
+        address payable _sender = payable(msg.sender);
         require(_withdrawValue <= balance[_sender], "You don't have this ammount");
         balance[_sender] -= _withdrawValue;
         _sender.transfer(_withdrawValue);
         totalMoney -= _withdrawValue;
     }
 
-    function WithdrawAll(address payable _sender) public
+    function WithdrawAll() public
     {
-        require(_sender == msg.sender, "You are not the owner of this account");
+        address payable _sender = payable(msg.sender);
         _sender.transfer(balance[_sender]);
         totalMoney -= balance[_sender];
         balance[_sender] = 0;
