@@ -1,4 +1,4 @@
-# NFTFetcher Contracts
+# Ethereum Trader Game Contracts
 
 This is a hardhat project for writing and compiling. solidity contracts for the a Unity Ethereum Trade Game.
 
